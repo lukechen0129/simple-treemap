@@ -6,7 +6,7 @@
 			:style="`width: ${node.weight / estimatedWidth * 100}%; `"
 		>
 			<span> {{node.name}} </span>
-			<span> {{node.value * 100}}% </span>
+			<span> {{(node.value * 100)}}% </span>
 		</div>
 		<div class="overlay" v-if="parentIsLoad">
 			<img src="../assets/spinner.png" alt=""/>
@@ -167,7 +167,7 @@
 <style>
 	.container {
 		min-width: 40vh;
-		min-height: 700px;
+		height: 1200px;
 		display: flex;
 		flex-direction: row;
 		align-items: stretch;

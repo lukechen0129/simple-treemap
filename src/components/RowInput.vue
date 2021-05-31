@@ -92,6 +92,9 @@ export default {
 		font-weight: bold;
 		cursor: pointer;
 	}
+	span:active {
+		background: #039a76;
+	}
 	.error-msg {
 		color: #f66;
 	}

@@ -13,6 +13,7 @@
 				<h4>Data:</h4>
 				<textarea v-model="dataString" type="text"/>
 				<small>Note: Array more than 50 elements will be trimmed.</small>
+				<div class="button" @click="addRandomData">Add Random data</div>
 			</div>
 			
 		</div>
@@ -39,7 +40,7 @@ export default {
 		return {
 			row: 1,
 			dataString: "[{ name: 'A', weight: 3	, value: -0.02 }]",
-			dataList: [
+			dummyData: [
 					{ name: 'A', weight: 3	, value: -0.02 }, 
 					{ name: 'B', weight: 5, value: 0.05 }, 
 					{ name: 'C', weight: 14, value: 0.015 }, 
@@ -49,6 +50,7 @@ export default {
 					{ name: 'G', weight: 4, value: -0.01 }, 
 					{ name: 'H', weight: 3, value: 0.01 },
 				],
+			dataList: [{ name: 'A', weight: 3	, value: -0.02 }],
 			isLoad: true,
 		}
 	},
@@ -60,6 +62,12 @@ export default {
 				return arr.slice(0,50);
 			}
 			return [];
+		}
+	},
+	methods:{
+		addRandomData(){
+			this.dummyData.push({name: String.fromCharCode(97 + Math.floor(Math.random() * 26)), weight: Math.floor(Math.random() * 50), value: -1 * Math.floor(Math.random() * 2)*(Math.random() * 1 ).toFixed(2)})
+			this.dataString = JSON.stringify(this.dummyData);
 		}
 	},
 	watch: {
@@ -122,12 +130,24 @@ textarea {
 }
 textarea {
 	width: 80%;
-	height: calc( 100% - 120px);
-	margin-bottom: 36px;
+	height: 400px;
 }
 small {
 	display: block;
-	margin-top: 24px;
+	margin-top: 8px;
+}
+.button {
+	padding: 12px 20px;
+	border-radius: 40px;
+	background: #00c797;
+	color: white;
+	font-weight: 600;
+	width: fit-content;
+	margin: 16px auto 36px;
+	cursor: pointer;
+}
+.button:active {
+	background: #039a76;
 }
 @media only screen and (min-width: 960px)  {
 	textarea {
