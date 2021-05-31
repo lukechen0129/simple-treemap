@@ -348,7 +348,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"/simple-treemap/img/spinner.4b9b99eb.png\";\n\n//# sourceURL=webpack:///./src/assets/spinner.png?");
+eval("module.exports = __webpack_require__.p + \"simple-treemap/img/spinner.4b9b99eb.png\";\n\n//# sourceURL=webpack:///./src/assets/spinner.png?");
 
 /***/ }),
 
